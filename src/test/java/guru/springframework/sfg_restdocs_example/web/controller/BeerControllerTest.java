@@ -25,7 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(BeerController.class)
 @ComponentScan(basePackages = "guru.springframework.sfg_restdocs_example.web.mappers")
-
 class BeerControllerTest {
 
 
