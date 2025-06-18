@@ -1,4 +1,4 @@
-package guru.springframework.sfg_restdocs_example.web.mapper;
+package guru.springframework.sfg_restdocs_example.web.mappers;
 
 import org.springframework.stereotype.Component;
 

@@ -2,7 +2,7 @@ package guru.springframework.sfg_restdocs_example.web.controller;
 
 
 import guru.springframework.sfg_restdocs_example.repositories.BeerRepository;
-import guru.springframework.sfg_restdocs_example.web.mapper.BeerMapper;
+import guru.springframework.sfg_restdocs_example.web.mappers.BeerMapper;
 import guru.springframework.sfg_restdocs_example.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

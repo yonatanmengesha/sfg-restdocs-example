@@ -1,4 +1,4 @@
-package guru.springframework.sfg_restdocs_example.web.mapper;
+package guru.springframework.sfg_restdocs_example.web.mappers;
 
 import guru.springframework.sfg_restdocs_example.domain.Beer;
 import guru.springframework.sfg_restdocs_example.web.model.BeerDto;
