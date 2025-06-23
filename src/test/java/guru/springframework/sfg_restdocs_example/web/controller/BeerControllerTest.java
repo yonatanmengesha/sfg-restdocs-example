@@ -56,6 +56,7 @@ class BeerControllerTest {
 
     @Test
     void getBeerById() throws Exception {
+        ConstrainedFields fields = new ConstrainedFields(BeerDto.class);
         given(beerRepository.findById(any())).willReturn(Optional.of(Beer.builder().build()));
 
         mockMvc.perform(get("/api/v1/beer/{beerId}" , UUID.randomUUID().toString())
@@ -74,7 +75,7 @@ class BeerControllerTest {
                                 fieldWithPath("lastModifiedDate").description("Date Updated"),
                                 fieldWithPath("beerName").description("Beer Name"),
                                 fieldWithPath("beerStyle").description("Beer Style"),
-                                fieldWithPath("upc").description("UPC of Beer"),
+                                fieldWithPath("upc").description("UPC of Beer").attributes(),
                                 fieldWithPath("price").description("Price"),
                                 fieldWithPath("quantityOnHand").description("Quantity On Hand")
                         )
@@ -103,6 +104,17 @@ class BeerControllerTest {
                                 fields.withPath("price").description("Beer Price"),
                                 fields.withPath("quantityOnHand").ignored()
                         )));
+//                                responseFields(
+//                                        fields.withPath("id").ignored(),
+//                                        fields.withPath("version").ignored(),
+//                                        fields.withPath("createdDate").ignored(),
+//                                        fields.withPath("lastModifiedDate").ignored(),
+//                                        fields.withPath("beerName").description("Name of the Beer"),
+//                                        fields.withPath("beerStyle").description("style of beer"),
+//                                        fields.withPath("upc").description("BEER UPC").attributes(),
+//                                        fields.withPath("price").description("Beer Price"),
+//                                        fields.withPath("quantityOnHand").ignored()
+//                                )));
         // the above is the use of manual implementation of fileds.withPath
 //                .andDo(document("v1/beer",
 //                        requestFields(
